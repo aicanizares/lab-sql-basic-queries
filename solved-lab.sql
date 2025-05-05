@@ -1,20 +1,20 @@
 # 1. Display all available tables in the Sakila database.
 SHOW TABLES
-from sakila;
+FROM sakila;
 
 # 2. Retrieve all the data from the tables actor, film and customer.
 SELECT *
-from actor;
+FROM actor;
 
 SELECT *
-from film;
+FROM film;
 
 SELECT *
-from customer;
+FROM customer;
 
 # 3. Retrieve the following columns from their respective tables: 3.1 Titles of all films from the film table
 SELECT title
-from film;
+FROM film;
 
 # PRIMARY3.2 List of languages used in films, with the column aliased as language from the language table
 SELECT name AS language
@@ -60,7 +60,11 @@ FROM actor
 WHERE first_name = "Scarlett";
 
 # BONUS: 7.2 Retrieve all movies that have ARMAGEDDON in their title and have a duration longer than 100 minutes.
-# NOT DONE
+SELECT title
+FROM film
+WHERE title LIKE "%ARMAGEDDON%" AND length > 100;
 
 # BONUS: 7.3 Determine the number of films that include Behind the Scenes content
-# NOT DONE
+SELECT special_features
+FROM film
+WHERE special_features LIKE "%Behind the Scenes%";
